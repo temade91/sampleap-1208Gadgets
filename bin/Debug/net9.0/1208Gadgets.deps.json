@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "1208Gadgets/1.0.0": {
+        "runtime": {
+          "1208Gadgets.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "1208Gadgets/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
