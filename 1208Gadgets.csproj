@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>_1208Gadgets</RootNamespace>
+    <RootNamespace>1208Gadgets</RootNamespace>
   </PropertyGroup>
 
 </Project>
