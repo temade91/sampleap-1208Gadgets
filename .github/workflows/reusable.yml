@@ -1,0 +1,42 @@
+name: Reusable Azure Web App Deploy
+
+on:
+  workflow_call:
+    inputs:
+      app-name:
+        description: 'The Azure Web App name'
+        required: true
+        type: string
+      dotnet-version:
+        description: '.NET version to use'
+        default: '9.x'
+        type: string
+    secrets:
+      AZURE_WEBAPP_PUBLISH_PROFILE:
+        required: true
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ inputs.dotnet-version }}
+
+      - name: Build
+        run: dotnet build --configuration Release
+
+      - name: Publish
+        run: dotnet publish -c Release -o '${{ github.workspace }}/publish_output'
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ inputs.app-name }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: '${{ github.workspace }}/publish_output'
