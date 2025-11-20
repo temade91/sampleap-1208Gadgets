@@ -75,4 +75,4 @@ It consists of two main jobs:
 
 ---
 
-✅ **Next Step:** Replace `<YOUR_USERNAME>` and `<YOUR_REPO>` in the badge URL with your GitHub username and repository name to make the badge work correctly.
+✅ **Next Step:** Replace `temade91` and `-1208sampleapp` in the badge URL with your GitHub username and repository name to make the badge work correctly.
